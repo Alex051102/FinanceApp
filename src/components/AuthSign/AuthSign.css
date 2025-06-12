@@ -1,0 +1,15 @@
+.auth__main-sign{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.auth-text{
+    width: 273px;
+    text-align: center;
+}
+.auth__main-dop{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}

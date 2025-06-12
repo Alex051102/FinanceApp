@@ -1,0 +1,30 @@
+.bottom-nav{
+    background-color: #DFF7E2;
+    position: sticky;
+}
+.bottom-nav__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    gap: 15px;
+}
+.bottom-nav__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%;
+    border-radius: 20px;
+}
+
+.bottom-nav__item:hover{
+    background-color: #00D09E;
+}
+.bottom-nav__item-img{
+    padding: 10px 0;
+}
+
+.current{
+    background-color: #00D09E;
+}
+

@@ -1,0 +1,108 @@
+
+
+.home__main{
+    background-color: #F1FFF3;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.home__main-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.home__panel{
+    background-color: #DFF7E2;
+    border-radius: 20px;
+}
+.home__panel-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+.home__panel-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.home__panel-item:hover{
+    background-color: #00D09E;
+}
+.home__panel-item-text{
+    padding: 10px 5px;
+}
+.home__operations-list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+    height: 400px;
+}
+.home__operations-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+.home__operations-item{
+    display: grid;
+    justify-content: center;
+   
+    grid-template-columns: 55px 100px 80px 80px;
+    gap: 5px;
+}
+.home__operations-item-icon{
+    width: 50px;
+}
+.home__operations-item-info{
+    
+}
+.home__operations-item-info--border{
+    border-right: 1px solid #00D09E;
+    border-left: 1px solid #00D09E;
+}
+.home__operations-item-action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.home__operations-item-money{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.home__operations-item-action-text{
+    padding: 0 3px;
+    text-align: center;
+    overflow-wrap: break-word; /* Лучше, чем word-wrap */
+  word-break: break-word;
+}
+.home__operations-item-money-text{
+    font-size: 16px;
+    font-weight: bold;
+    overflow-wrap: break-word; /* Лучше, чем word-wrap */
+  word-break: break-word;
+}
+.home__operations-item-money-text--blue{
+    color: blue;
+}
+.home__operations-item-text-type,.home__operations-item-text-time,.home__operations-item-action-text{
+    font-size: 14px;
+}
+@media(width<390px){
+    
+
+    .home__main-container{
+        padding: 25px;
+    }
+    .home__operations-item{
+        
+        grid-template-columns: 50px 90px 70px 80px;
+        gap: 5px;
+    }
+    .home__operations-item-icon{
+        width: 45px;
+    }
+    
+   
+}

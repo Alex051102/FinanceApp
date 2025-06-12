@@ -1,0 +1,86 @@
+.auth{
+    background-color: #00D09E;
+}
+
+.auth__up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth__up-title{
+    padding: 50px 0;
+}
+.auth__main{
+    background-color: #F1FFF3;
+    border-top-right-radius: 25px ;
+    border-top-left-radius: 25px ;
+    display: flex;
+    justify-content: center;
+}
+.auth__main-container{
+    padding: 85px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.auth__main-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.auth__main-inputs-item{
+    display: flex;
+    flex-direction: column;
+position: relative;
+    gap: 5px;
+}
+.auth__main-input{
+    padding: 5px 15px;
+    border-radius: 20px;
+    height: 31px;
+    background-color: #DFF7E2;
+    border: none;
+    width: 326px;
+
+}
+.auth__main-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 40px;
+}
+.auth__main-buttons-text{
+    font-size: 12px;
+}
+
+.text-blue{
+    color: #0068FF;
+}
+.auth__main-sign-up-social{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.auth__main-sign-up-social-images{
+    display: flex;
+    justify-content: center;
+}
+.error-mess{
+    color: red;
+    position: absolute;
+    top: 65px;
+    left: 10px;
+}
+@media(width<400px){
+    .auth__main-input{
+        padding: 5px 15px;
+        border-radius: 20px;
+        height: 31px;
+        background-color: #DFF7E2;
+        border: none;
+        width: 276px;
+    
+    }
+}

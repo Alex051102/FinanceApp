@@ -1,0 +1,92 @@
+.home__up{
+    display: flex;
+    flex-direction: column;
+    gap:55px;
+}
+.home__up-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+.home__intro{
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    
+}
+.home-intro--grid3{
+    display: grid;
+    grid-template-columns:0.2fr 1fr 0.2fr;
+    align-items: center;
+    text-align: center;
+}
+.home__intro-text-title{
+    font-weight: bold;
+    margin: 0;
+}
+.home__notifications{
+    display: flex;
+    justify-content: end;
+}
+.home__notifications-image{
+    width: 30px;
+    height: 30px;
+}
+.back{
+    
+}
+.back-img{
+    width: 19px;
+    height: 16px;
+}
+.back-flex{
+    display: flex;
+}
+.back-none{
+    display: none;
+}
+.home__total-numbers{
+    display: flex;
+    justify-content: center;
+    
+}
+.home__total-number{
+    display: flex;
+    justify-content: center;
+}
+.home__total-number-container--padding-left{
+    padding-left: 35px;
+}
+.home__total-number-container--padding-right{
+    padding-right: 35px;
+}
+.home__total-number--border-right{
+    border-right: 2px solid white;
+}
+.home__total-text{
+    display: flex;
+    gap: 6px;
+}
+.home__total-money {
+    font-size: 26px;
+    
+}
+.home__total-money--white{
+    color: white;
+}
+.home__total-money--blue{
+    color: blue;
+}
+
+@media(width<390px){
+    .home__total-number-container--padding-right {
+        padding-right: 15px;
+    }
+    .home__total-number-container--padding-left {
+        padding-left: 15px;
+    }
+
+    
+   
+}

@@ -1,0 +1,41 @@
+.analyzis__main{
+    background-color: #F1FFF3;
+    padding: 20px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.analyzis__graphics{
+    display: flex;
+    justify-content: center;
+}
+.analyzis__graphics-container{
+    padding: 0px;
+    
+}
+.analyzis__main-panel{
+    background-color: #DFF7E2;
+    border-radius: 20px;
+}
+.analyzis__main-panel-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+.analyzis__main-panel-item{
+    display: flex;
+    justify-content: center;
+    
+    border-radius: 20px;
+}
+.analyzis__main-panel-item:hover{
+    background-color: #00D09E;
+}
+.analyzis__main-panel-item--current{
+    background-color: #00D09E;
+}
+.analyzis__main-panel-item-text{
+    padding: 12px 0;
+}
