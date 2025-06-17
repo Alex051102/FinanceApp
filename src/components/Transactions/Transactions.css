@@ -1,0 +1,55 @@
+.transactions__up{
+    background-color: #00D09E;
+}
+.transactions__up-container{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 40px;
+}
+.transactions__up-types{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.transactions__up-total{
+    display: flex;
+    justify-content: center;
+    background-color: #F1FFF3;
+    border-radius: 20px;
+}
+.transactions__up-total--current{
+    background-color:#0068FF ;
+}
+.transactions__up-total-text{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.transactions__up-total-money{
+    font-size: 18px;
+}
+.transactions__up-total-money--big{
+    font-size: 22px;
+    font-weight: bold;
+}
+.transactions__up-total-title--current,.transactions__up-total-money--current{
+    color: white;
+}
+
+
+.transactions__main{
+    background-color: #F1FFF3;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+
+}
+.transactions__main-container{
+    padding: 30px;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

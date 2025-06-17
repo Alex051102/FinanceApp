@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './Home.css'
 
 import salary from '../../assets/icons/Salary.svg'
@@ -8,6 +8,7 @@ import food from '../../assets/icons/Food.svg'
 import entertaiment from '../../assets/icons/Entertainment.svg'
 import groceries from '../../assets/icons/Groceries.svg'
 import gift from '../../assets/icons/Gift.svg'
+
 import db from '../../../db.json'
 import UsualUpPart from '../UsualUpPart/UsualUpPart'
 export default function Home() {
@@ -88,7 +89,7 @@ export default function Home() {
    <>
         <div className="home">
            
-            <UsualUpPart text='Hi, Welcome Back' arrow={false}></UsualUpPart>     
+            <UsualUpPart customMoney={false} text='Hi, Welcome Back' arrow={false}></UsualUpPart>     
                 <div className="home__main">
                     <div className="home__main-container">
                         <div className="home__panel">

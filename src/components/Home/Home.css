@@ -7,6 +7,7 @@
 }
 .home__main-container{
     padding: 30px;
+    padding-bottom: 200px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -36,8 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    overflow-y: auto;
-    height: 400px;
+    
 }
 .home__operations-list::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */

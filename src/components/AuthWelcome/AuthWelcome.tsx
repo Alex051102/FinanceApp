@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './AuthWelcome.css'
 import Button from '../Button/Button'
 import google from '../../assets/icons/Google.svg'

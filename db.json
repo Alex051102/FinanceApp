@@ -12,6 +12,46 @@
       "operations":[
         {
           "year": 2025,
+          "month": "March",
+          "day": 11,
+          "weekDay":"Mon",
+          "time": "17:50",
+          "type": "gift",
+          "name": "gifts",
+          "money": -75.6
+        },
+        {
+          "year": 2025,
+          "month": "June",
+          "day": 1,
+          "weekDay":"Sun",
+          "time": "09:15",
+          "type": "transport",
+          "name": "metro",
+          "money": -2.5
+        },
+        {
+          "year": 2025,
+          "month": "June",
+          "day": 1,
+          "weekDay":"Sun",
+          "time": "09:15",
+          "type": "transport",
+          "name": "metro",
+          "money": -2.5
+        },
+        {
+          "year": 2025,
+          "month": "June",
+          "day": 1,
+          "weekDay":"Sun",
+          "time": "09:15",
+          "type": "transport",
+          "name": "metro",
+          "money": -2.5
+        },
+        {
+          "year": 2025,
           "month": "June",
           "day": 1,
           "weekDay":"Sun",

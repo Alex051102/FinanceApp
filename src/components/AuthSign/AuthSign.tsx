@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  {  useState } from 'react'
 import './AuthSign.css'
 import Button from '../Button/Button'
 import { useAppDispatch } from '../../hook'

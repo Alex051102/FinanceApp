@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import './AnalyzisSearch.css'
 import back from '../../assets/icons/back.svg'
 import notif from '../../assets/icons/notif.svg'
@@ -12,6 +12,7 @@ import food from '../../assets/icons/Food.svg'
 import entertaiment from '../../assets/icons/Entertainment.svg'
 import groceries from '../../assets/icons/Groceries.svg'
 import gift from '../../assets/icons/Gift.svg'
+import { Link } from 'react-router-dom'
 export default function AnalyzisSearch() {
 
     const days = Array.from({ length: 31 }, (_, i) => i + 1);
@@ -26,14 +27,14 @@ export default function AnalyzisSearch() {
     const [month,setMonth]=useState('Month')
     const [letMonth,setLetMonth]=useState(false)
     const [kMonth,setKMonth]=useState(0);
-
+    
     const [year,setYear]=useState('Year')
     const [letYear,setLetYear]=useState(false)
     const [kYear,setKYear]=useState(0);
 
     const [money,setMoney]=useState('income')
 
-    console.log(money)
+   
     function openCategories(){
         if(kCategory%2==0){
             setLetCategories(true)
@@ -112,17 +113,58 @@ export default function AnalyzisSearch() {
         user.name==localStorage.getItem('user')?
         data=user.operations:""})
    
+    const [search,setSearch]=useState('')
+
+    const [rendering, setRendering] = useState(<></>);
+
+function renderFiltered() {
+  // Собираем все подходящие карточки в массив
+  const cards: React.ReactNode[] = [];
+  
+  data.forEach(oper => {
+    if ((oper.name.startsWith(search) || search === '') &&
+        (category==oper.type || category=='All categories')&&
+        (oper.day.toString() === day || day === 'Day') &&
+        (oper.month === month || month === 'Month') &&
+        (oper.year.toString() === year || year === 'Year') &&
+        ((oper.money > 0 && money === 'income') || (oper.money < 0 && money === 'expense'))) {
+      
+      // Создаем карточку для каждого подходящего элемента
+      cards.push(
+        <div className="analyzis-search__card">
+                            <div className="analyzis-search__card-container">
+                                <img className='analyzis-search__card-img' src={oper?.type ? imageSetter(oper.type):''} alt="" />
+                                <div className="analyzis-search__card-info">
+                                    <p className='analyzis-search__card-info-type'>{oper.type}</p>
+                                    <p className='analyzis-search__card-info-time'>{oper.time} - {oper.day} {oper.month}</p>
+                                </div>
+                                <p className='analyzis-search__card-info-name'>{oper.name}</p>
+                                <p className={`analyzis-search__card-text ${oper.money<0?'analyzis-search__card-text--blue':""}`}>{oper.money}$</p>
+                                
+                            </div>
+                        </div>
+      );
+    }
+  });
+
+  // Обновляем состояние один раз со всеми карточками
+  setRendering(
+    <div className="analyzis-search__cards">
+      {cards.length > 0 ? cards : <p>No operations found</p>}
+    </div>
+  );
+}
   return (
     <>
         <div className="analyzis-search">
             <div className="analyzis-search__up">
                 <div className="analyzis-search__up-container">
                     <div className="analyzis-search__up-nav">
-                        <div className="analyzis-search__up-back"><img src={back} alt="" /></div>
+                        <Link to='/analyzis'><div className="analyzis-search__up-back"><img src={back} alt="" /></div></Link>
                         <div className="analyzis-search__up-text-outer"><h2 className='analyzis-search__up-text'>Search</h2></div>
                         <div className="analyzis-search__up-notifications"><img src={notif} alt="" /></div>
                     </div>
-                    <input placeholder='Search...' className='analyzis-search__up-input' type="text" name="" id="" />
+                    <input onChange={(e)=>setSearch(e.target.value)} placeholder='Search...' className='analyzis-search__up-input' type="text" name="" id="" />
                     
                 </div>
                 
@@ -143,7 +185,7 @@ export default function AnalyzisSearch() {
                         </div>
                         {letCategories==true?<div className="analyzis-search__main-item-categories">
                             <div className="analyzis-search__main-item-category">
-                                <p className='analyzis-search__main-item-category-text'>All categories</p>
+                                <p onClick={()=>{setCategory('All categories');openCategories()}} className='analyzis-search__main-item-category-text'>All categories</p>
                                 
                             </div>
                             <div className="analyzis-search__main-item-category">
@@ -290,22 +332,13 @@ export default function AnalyzisSearch() {
                             </div>
                         </div>
                     </div>
-                    <div className="analyzis-search__main-button">
-                        <Button text='search' color='#00D09E'></Button>
+                    <div onClick={renderFiltered} className="analyzis-search__main-button">
+                        <Button  text='search' color='#00D09E'></Button>
                     </div>
-                    {data.map(oper=>(
-                        <div className="analyzis-search__card">
-                            <div className="analyzis-search__card-container">
-                                <img className='analyzis-search__card-img' src={oper?.type ? imageSetter(oper.type):''} alt="" />
-                                <div className="analyzis-search__card-info">
-                                    <p className='analyzis-search__card-info-type'>{oper.type}</p>
-                                    <p className='analyzis-search__card-info-time'>{oper.time} - {oper.day} {oper.month}</p>
-                                </div>
-                                <p className={`analyzis-search__card-text ${oper.money<0?'analyzis-search__card-text--blue':""}`}>{oper.money}$</p>
-                                
-                            </div>
-                        </div>
-                    ))}
+                    
+                     {rendering}
+                    
+                   
                 </div>
             </div>
         </div>

@@ -32,8 +32,8 @@
     background-color: #F1FFF3;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
-    height: 600px;
-    overflow-y: auto;
+    height: calc(100%+100px);
+    padding-bottom: 100px;
 }
 .analyzis-search__main-container{
     
@@ -65,6 +65,7 @@
 }
 .analyzis-search__main-item-categories{
     position: absolute;
+    z-index: 11;
     background-color: #DFF7E2;
     width: 400px;
     display: flex;
@@ -142,13 +143,18 @@
     display: flex;
     justify-content: center;
 }
+.analyzis-search__cards{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .analyzis-search__card{
     background-color: #DFF7E2;
     border-radius: 20px;
 }
 .analyzis-search__card-container{
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 140px 2fr 1fr;
     gap: 10px;
     align-items: center;
     padding: 15px;
@@ -173,6 +179,22 @@
         grid-template-columns: 1fr 0.4fr;
         gap: 5px;
         padding: 12px 5px;
+       
+    }
+    .analyzis-search__card-info-type,.analyzis-search__card-info-time,.analyzis-search__card-info-name{
+        font-size: 14px;
+    }
+    .analyzis-search__card-container{
+       
+        grid-template-columns: 65px 75px 70px 65px;
+        gap: 5px;
+       
+        padding: 10px;
+       
+    }
+    .analyzis-search__main-container{
+    
+        padding: 20px;
        
     }
 }

@@ -8,10 +8,11 @@ import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../../hook'
 import { setBackArrow } from '../../store/financeSlice'
 interface MyComponentProps {
+    customMoney:boolean,
     arrow:boolean,
     text:string 
   }
-const UsualUpPart: React.FC<MyComponentProps> = ({ arrow,text }) =>  {
+const UsualUpPart: React.FC<MyComponentProps> = ({ customMoney,arrow,text }) =>  {
     const dis=useAppDispatch()
 
   return (
@@ -30,7 +31,7 @@ const UsualUpPart: React.FC<MyComponentProps> = ({ arrow,text }) =>  {
                             <img className='home__notifications-image' src={notif} alt="" />
                         </div>
                     </div>
-                    <div className="home__total">
+                    {customMoney==true?'':<div className="home__total">
                         <div className="home__total-numbers">
                             <div className="home__total-number home__total-number--border-right">
                                 <div className="home__total-number-container home__total-number-container--padding-right">
@@ -54,7 +55,8 @@ const UsualUpPart: React.FC<MyComponentProps> = ({ arrow,text }) =>  {
                             </div>
                             
                         </div>
-                    </div>
+                    </div>}
+                    
                     </div>
                     
                 </div>

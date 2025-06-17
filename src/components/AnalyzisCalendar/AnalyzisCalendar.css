@@ -1,0 +1,121 @@
+.analyzis-calendar__main{
+    background-color: #F1FFF3;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+    height:100%;
+}
+.analyzis-calendar__main-container{
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+.analyzis-calendar__main-filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.analyzis-calendar__main-filter-dates-info{
+    position: relative;
+   
+
+}
+.analyzis-calendar__main-filter-dates-info-visible{
+    display: flex;
+    gap: 10px;
+}
+.analyzis-calendar__main-filter-dates-info-visible--justify-end{
+    display: flex;
+    justify-content:end;
+}
+.analyzis-calendar__main-filter-dates-info-non-visible{
+    position: absolute;
+    background-color: #DFF7E2;
+    border-radius: 15px;
+}
+.analyzis-calendar__main-filter-dates-info-non-visible--right{
+    right: 10px;
+}
+.analyzis-calendar__main-filter-dates-info-non-visible-item:hover{
+    background-color: #00D09E;
+}
+.analyzis-calendar__main-filter-dates-info-non-visible-item-text{
+    padding: 10px;
+}
+.analyzis-calendar__main-table{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.analyzis-calendar__main-table-week-days{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.analyzis-calendar__main-table-week-day{
+    display: flex;
+    justify-content: center;
+}
+.analyzis-calendar__main-table-week-day-text{
+    color: #3299FF;
+    font-size: 14px;
+}
+.analyzis-calendar__main-table-days{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 25px;
+}
+.analyzis-calendar__main-table-day{
+    display: flex;
+    justify-content: center;
+}
+.analyzis-calendar__main-table-day-text{
+    padding: 5px 0;
+    font-size: 14px;
+}.analyzis-calendar__main-table-day--current{
+    background-color: #00D09E;
+}
+.analyzis-calendar__cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.analyzis-calendar__main-options{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.analyzis-calendar__main-option{
+    background-color: #DFF7E2;
+    border-radius: 30px;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+.analyzis-calendar__main-option--current{
+    background-color: #00D09E;
+   
+}
+.analyzis-calendar__main-option-text{
+    padding: 10px 10px;
+}
+.analyzis-calendar__main-options-content{
+    padding-bottom: 100px;
+}
+@media(width<420px){
+    .analyzis-calendar__main-container{
+        padding: 20px;
+    }
+}
+
+@media(width<390px){
+    .analyzis-calendar__main-option{
+       
+        border-radius: 30px;
+        width: 130px;
+        
+    }
+   
+}

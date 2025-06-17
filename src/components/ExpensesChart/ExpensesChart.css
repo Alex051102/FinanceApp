@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 30px;
     width: 350px;
+    max-height: 100%;
+    
    
 }
 .chart__graph{
@@ -12,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    
+    overflow: auto;
     
 }
 .chart__graph-container{
@@ -48,6 +50,8 @@
     font-size: 22px;
 }
 
+
+ 
 @media(width<395px){
     .chart{
       

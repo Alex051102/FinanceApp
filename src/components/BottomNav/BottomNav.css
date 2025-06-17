@@ -1,7 +1,15 @@
-.bottom-nav{
+
+.bottom-nav {
     background-color: #DFF7E2;
-    position: sticky;
-}
+    position: fixed;
+    bottom: 0;
+    left:250px;
+    right: 0;
+    width: 450px; /* Ширина равна .main */
+    max-width: inherit; /* Наследует ограничение ширины от .main */
+   
+    z-index: 100;
+  }
 .bottom-nav__container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -27,4 +35,10 @@
 .current{
     background-color: #00D09E;
 }
-
+@media(width<450px){
+    .bottom-nav {
+       left: 0;
+        width: 100%; /* Ширина равна .main */
+       
+      }
+}

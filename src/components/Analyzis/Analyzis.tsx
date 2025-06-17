@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useState } from 'react'
 import UsualUpPart from '../UsualUpPart/UsualUpPart'
 import './Analyzis.css'
 import db from '../../../db.json'
@@ -40,7 +40,7 @@ export default function Analyzis() {
     <>
         
         <div className="analyzis">
-            <UsualUpPart arrow={true} text='Analyzis'></UsualUpPart>
+            <UsualUpPart customMoney={false} arrow={true} text='Analyzis'></UsualUpPart>
             <div className="analyzis__main">
                 <div className="analyzis__main-panel">
                     <div className="analyzis__main-panel-container">

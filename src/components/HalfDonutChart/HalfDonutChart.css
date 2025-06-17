@@ -1,0 +1,27 @@
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+  }
+  
+.cirle{
+   
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+@media(width<400px){
+    .cirle{
+       
+        width: 250px;
+        height: 250px;
+        margin: 0;
+    }
+}
+

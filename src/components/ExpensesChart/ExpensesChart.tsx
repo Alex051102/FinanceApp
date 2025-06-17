@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import food from '../../assets/icons/Food.svg';
+
 import calender from '../../assets/icons/Calender.svg';
 import search from '../../assets/icons/Search.svg';
 import './ExpensesChart.css';
@@ -254,7 +254,7 @@ const ExpensesChart: React.FC<ExpensesChartProps> = ({ data, type }) => {
         <h3 className='chart__title'>{title}</h3>
         <div className="chart__icons">
           <Link to='/analyzis-search'><img src={search} alt="Search" style={{ width: '30px', height: '30px' }} /></Link>
-          <img src={calender} alt="Calendar" style={{ width: '30px', height: '30px' }} />
+          <Link to='/analyzis-calendar'><img src={calender} alt="Calendar" style={{ width: '30px', height: '30px' }} /></Link>
         </div>
         </div>
         <Bar options={options} data={chartData} />

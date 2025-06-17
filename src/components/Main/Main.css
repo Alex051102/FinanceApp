@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+.content {
+    flex: 1; /* Занимает всё свободное пространство */
+    overflow-y: auto; /* Скролл только здесь */
+   
+  }
+  .content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
