@@ -8,7 +8,7 @@ import food from '../../assets/icons/Food.svg'
 import entertaiment from '../../assets/icons/Entertainment.svg'
 import groceries from '../../assets/icons/Groceries.svg'
 import gift from '../../assets/icons/Gift.svg'
-
+import more from '../../assets/icons/More.svg'
 import db from '../../../db.json'
 import UsualUpPart from '../UsualUpPart/UsualUpPart'
 export default function Home() {
@@ -83,7 +83,12 @@ export default function Home() {
     if(type=='groceries'){
         return groceries
     }
+    if(type=='more'){
+        return more
+    }
    }
+
+   
     
   return (
    <>
@@ -107,6 +112,7 @@ export default function Home() {
                         </div>
                         <div className="home__operations-list">
                             {db.users.map(user=>(
+                            
                                 user.name==localStorage.getItem('user')?
                                 sortOperations(user.operations)?.map(oper=>(
                                     <div className="home__operations-item">
@@ -114,7 +120,7 @@ export default function Home() {
                                 <div className="home__operations-item-info">
                                     <div className="home__operations-item-info-container">
                                         <p className='home__operations-item-text-type'>{oper.type}</p>
-                                        <p className='home__operations-item-text-time'>{oper.time} - {oper.month} {oper.day}</p>
+                                        <p className='home__operations-item-text-time home__operations-item-text-time--blue'>{oper.time} - {oper.month} {oper.day}</p>
                                     </div>
                                     
                                 </div>

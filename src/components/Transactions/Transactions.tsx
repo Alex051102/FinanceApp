@@ -11,7 +11,7 @@ import entertaiment from '../../assets/icons/Entertainment.svg';
 import groceries from '../../assets/icons/Groceries.svg';
 import gift from '../../assets/icons/Gift.svg';
 
-type Operation = {
+/* type Operation = {
   year: number;
   month: string;
   day: number;
@@ -20,7 +20,7 @@ type Operation = {
   type: string;
   name: string;
   money: number;
-};
+}; */
 
 export default function Transactions() {
   const navigate = useNavigate();
@@ -181,7 +181,7 @@ export default function Transactions() {
                       <div className="home__operations-item-info">
                         <div className="home__operations-item-info-container">
                           <p className='home__operations-item-text-type'>{operation.type}</p>
-                          <p className='home__operations-item-text-time'>
+                          <p className='home__operations-item-text-time home__operations-item-text-time--blue'>
                             {operation.time} - {operation.month} {operation.day}
                           </p>
                         </div>

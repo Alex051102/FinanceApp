@@ -32,8 +32,9 @@
     background-color: #F1FFF3;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
-    height: calc(100%+100px);
+   
     padding-bottom: 100px;
+    min-height: 600px;
 }
 .analyzis-search__main-container{
     
@@ -117,6 +118,9 @@
 .analyzis-search__main-item-date-items{
     background-color: #DFF7E2;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .analyzis-search__main-item-date-item{
     display: flex;
@@ -178,7 +182,7 @@
         
         grid-template-columns: 1fr 0.4fr;
         gap: 5px;
-        padding: 12px 5px;
+        padding: 12px 9px;
        
     }
     .analyzis-search__card-info-type,.analyzis-search__card-info-time,.analyzis-search__card-info-name{

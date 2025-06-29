@@ -38,41 +38,77 @@ export default function AnalyzisSearch() {
     function openCategories(){
         if(kCategory%2==0){
             setLetCategories(true)
+            setLetDay(false)
+            setLetMonth(false)
+            setLetYear(false)
+            setKMonth(0)
+            setKYear(0)
             setKCategory(k=>k+1)
+            setKDay(0)
         }
         else{
             setLetCategories(false)
+            setKMonth(0)
+            setKYear(0)
             setKCategory(k=>k+1)
+            setKDay(0)
         }
     }
     function openDays(){
         if(kDay%2==0){
+            setLetCategories(false)
             setLetDay(true)
+            setLetMonth(false)
+            setLetYear(false)
+            setKMonth(0)
+            setKYear(0)
+            setKCategory(0)
             setKDay(k=>k+1)
         }
         else{
             setLetDay(false)
+            setKMonth(0)
+            setKYear(0)
+            setKCategory(0)
             setKDay(k=>k+1)
         }
     }
     function openMonthes(){
         if(kMonth%2==0){
+            setLetCategories(false)
+            setLetDay(false)
             setLetMonth(true)
+            setLetYear(false)
             setKMonth(k=>k+1)
+            setKYear(0)
+            setKCategory(0)
+            setKDay(0)
         }
         else{
             setLetMonth(false)
             setKMonth(k=>k+1)
+            setKYear(0)
+            setKCategory(0)
+            setKDay(0)
         }
     }
     function openYears(){
         if(kYear%2==0){
+            setLetCategories(false)
+            setLetDay(false)
+            setLetMonth(false)
             setLetYear(true)
+            setKMonth(0)
             setKYear(k=>k+1)
+            setKCategory(0)
+            setKDay(0)
         }
         else{
             setLetYear(false)
+            setKMonth(0)
             setKYear(k=>k+1)
+            setKCategory(0)
+            setKDay(0)
         }
     }
     function imageSetter(type:string){

@@ -1,0 +1,57 @@
+.help__main{
+    background-color: #F1FFF3;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    min-height: 800px;
+}
+.help__main-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.help__main-title{
+    display: flex;
+    justify-content: center;
+}
+.help__main-panel{
+    background-color: #DFF7E2;
+    border-radius: 15px;
+}
+.help__main-panel-container{
+    padding: 5px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.help__main-panel-item{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+.help__main-panel-item-text{
+    padding: 20px;
+}
+.help__main-panel-item:hover{
+    background-color: #00D09E;
+}
+.help__main-faq{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.help__main-question{
+    display: grid;
+    grid-template-columns: 14fr 1fr;
+   align-items: center;
+}
+
+.help__main-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.help__main-contact-item{
+    display: grid;
+    grid-template-columns: 2fr 10fr 1fr;
+    align-items: center;
+}

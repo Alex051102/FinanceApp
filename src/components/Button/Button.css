@@ -8,3 +8,12 @@
     font-size: 18px;
     border: none;
 }
+@media(width<390px){
+    .button{
+        width: 167px;
+        height: 38px;
+       
+        font-size: 16px;
+       
+    }
+}

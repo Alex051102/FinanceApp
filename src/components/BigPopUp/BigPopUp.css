@@ -1,0 +1,38 @@
+.pop-up-big{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1001; /* Должен быть выше оверлея */
+  
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.pop-up-big__container{
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    gap: 45px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pop-up-big__text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.pop-up-big__button{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

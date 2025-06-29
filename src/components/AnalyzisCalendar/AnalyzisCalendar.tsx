@@ -12,8 +12,9 @@ import food from '../../assets/icons/Food.svg'
 import entertaiment from '../../assets/icons/Entertainment.svg'
 import groceries from '../../assets/icons/Groceries.svg'
 import gift from '../../assets/icons/Gift.svg'
+import more from '../../assets/icons/More.svg'
 import HalfDonutChart from '../HalfDonutChart/HalfDonutChart';
-import Button from '../Button/Button';
+
 export default function AnalyzisCalendar() {
     const monthes2025: string[][] = [
         // Январь 2025 (начинается в среду)
@@ -110,6 +111,7 @@ export default function AnalyzisCalendar() {
     }
 
     const [month,setMonth]=useState('June')
+    const [monthNum,setMonthNum]=useState(0)
     const [letMonth,setLetMonth]=useState(false)
     const [kMonth,setKMonth]=useState(0);
     function openMonthes(){
@@ -166,6 +168,9 @@ export default function AnalyzisCalendar() {
     }
     if(type=='groceries'){
         return groceries
+    }
+    if(type=='more'){
+        return more
     }
    }
 
@@ -261,6 +266,44 @@ export default function AnalyzisCalendar() {
     },[choosenNum,month,year])
 
     const [options,setOptions]=useState(true)
+
+
+    useEffect(()=>{
+        if(month=='January'){
+            setMonthNum(0)
+        }if(month=='February'){
+            setMonthNum(1)
+        }
+        if(month=='March'){
+            setMonthNum(2)
+        }
+        if(month=='April'){
+            setMonthNum(3)
+        }
+        if(month=='May'){
+            setMonthNum(4)
+        }
+        if(month=='Juny'){
+            setMonthNum(5)
+        }
+        if(month=='July'){
+            setMonthNum(6)
+        }
+        if(month=='August'){
+            setMonthNum(7)
+        }
+        if(month=='September'){
+            setMonthNum(8)
+        }
+        if(month=='October'){
+            setMonthNum(9)
+        }
+        if(month=='November'){
+            setMonthNum(10)
+        }if(month=='December'){
+            setMonthNum(11)
+        }
+    },[month])
   return (
     <>
         <div className="analyzis-calendar">
@@ -375,7 +418,7 @@ export default function AnalyzisCalendar() {
                                     
                             </div>
                             <div className="analyzis-calendar__main-table-days">
-                                {monthes2025[0].map((num)=>(
+                                {monthes2025[monthNum].map((num)=>(
                                     <div className={`analyzis-calendar__main-table-day ${num==choosenNum?'analyzis-calendar__main-table-day--current':""}`}>
                                         <p onClick={()=>openNum(num)} className='analyzis-calendar__main-table-day-text'>{num}</p>
                                     </div>

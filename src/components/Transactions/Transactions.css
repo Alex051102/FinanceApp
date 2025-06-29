@@ -44,6 +44,7 @@
     background-color: #F1FFF3;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
+    min-height: 600px;
 
 }
 .transactions__main-container{

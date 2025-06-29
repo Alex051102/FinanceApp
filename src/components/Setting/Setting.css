@@ -1,0 +1,93 @@
+.setting__main{
+    background-color: #F1FFF3;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    min-height: 800px;
+}
+.setting__main-container{
+    padding: 30px;
+    padding-top: 80px;
+    padding-bottom: 150px;
+}
+.setting__main-options{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.setting__main-option{
+    display: grid;
+    grid-template-columns: 2fr 11fr 1fr;
+    align-items: center;
+}
+
+
+.setting__main-passwords{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.setting__main-password{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+.error-red{
+    position: absolute;
+    top: 80px;
+    color: red;
+}
+.setting__main-password-input{
+    background-color: #DFF7E2;
+    border-radius: 15px;
+    padding: 15px 0;
+    padding-left: 10px;
+    border: none;
+}
+.setting__main-passwords-button{
+    display: flex;
+    justify-content: center;
+}
+
+
+.setting__main-delete-account{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.setting__main-delete-account h3{
+    text-align: center;
+}
+.setting__main-delete-account-input-outer{
+    position: relative;
+}
+.setting__main-delete-account-input{
+    background-color: #DFF7E2;
+    border-radius: 15px;
+    padding: 15px 0;
+    padding-left: 7px;
+    border: none;
+    width: 98%;
+}
+.error-delete-red{
+    position: absolute;
+    top: 45px;
+    color: red;
+}
+.setting__main-delete-account-button{
+    display: flex;
+    justify-content: center;
+}
+
+.setting__main-delete-account-descr{
+    background-color: #DFF7E2;
+    border-radius: 15px;
+}
+.setting__main-delete-account-descr-container{
+    padding: 15px;
+}
+.setting__main-delete-account-descr-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

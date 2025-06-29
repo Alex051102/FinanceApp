@@ -1,0 +1,87 @@
+.categories__main-button{
+    display: flex;
+    justify-content: center;
+}
+.categories__no-operation{
+    text-align: center;
+}
+
+.categories__add-main{
+    background-color: #F1FFF3;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    min-height: 800px;
+}
+
+.categories__add-main-container{
+    padding: 40px;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.categories__add-main-item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+.categories__add-main-item-input-choosen{
+  
+    background-color: #DFF7E2;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    
+}
+.categories__add-main-item-input-choosen-container{
+    width: 100%;
+    display: grid;
+    padding: 0 10px;
+    grid-template-columns: 1fr 0.2fr;
+}
+.categories__add-main-item-input-choosen-img{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.categories__add-main-item-input{
+    position: relative;
+}
+.categories__add-main-item-input-choices{
+    position: absolute;
+    background-color: #DFF7E2;
+    width: 100%;
+    z-index: 22;
+    border-radius: 15px;
+}
+
+.categories__add-main-item-input-choices-element-text{
+    padding: 10px;
+}
+.categories__add-main-item-input-choices-element:hover{
+    background-color: #a9eab1;
+}
+.categories__add-main-item-input-outer{
+    width: 100%;
+}
+.categories__add-main-item-input{
+    width: 100%;
+    background-color: #DFF7E2;
+    padding: 15px 0;
+    padding-left: 5px;
+    border-radius: 15px;
+    border: none;
+    
+}
+
+.categories__add-main-button{
+    display: flex;
+    justify-content: center;
+}
+
+.error-red{
+    color: red;
+    position: absolute;
+    top: 85px;
+}

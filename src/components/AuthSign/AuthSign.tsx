@@ -117,7 +117,17 @@ export default function AuthSign() {
       };
 
 
-
+  type Operation = {
+        year: number,
+        month: string,
+        day: number,
+        weekDay:string,
+        time: string,
+        type: string,
+        name: string,
+        money: number,
+        avatar:string
+  };
 
 interface User {
   name: string;
@@ -125,6 +135,7 @@ interface User {
   email: string;
   password: string;
   birthDate: string;
+  operations:Operation[]
 }
 
 
@@ -135,7 +146,9 @@ const newUser = {
   phone: phone,
   email: email,
   password: pass,
-  birthDate: date
+  avatar:"",
+  birthDate: date,
+  operations:[]
 };
     const registerUser = async (userData: User) => {
 
@@ -143,7 +156,7 @@ const newUser = {
     // 3. Отправка на сервер
     const response = await axios.post('http://localhost:3000/users', {
       ...userData,
-      id: Date.now(),
+      id: Date.now().toString(),
     });
 
     return response.data;
@@ -164,9 +177,12 @@ const newUser = {
             .then(() => console.log('Пользователь зарегистрирован'))
             .catch(() => console.log('Ошибка регистрации'));
             localStorage.setItem('auth','true')
+           localStorage.setItem('user',name)
             window.location.reload()
           }
-        else  localStorage.setItem('auth','false')
+        else  {localStorage.setItem('auth','false')
+              
+      }
     }
     
     

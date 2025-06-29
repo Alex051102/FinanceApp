@@ -4,6 +4,7 @@
     background-color: #F1FFF3;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
+    min-height: 600px;
 }
 .home__main-container{
     padding: 30px;
@@ -76,6 +77,10 @@
     text-align: center;
     overflow-wrap: break-word; /* Лучше, чем word-wrap */
   word-break: break-word;
+}
+.home__operations-item-text-time--blue{
+    color: blue;
+
 }
 .home__operations-item-money-text{
     font-size: 16px;

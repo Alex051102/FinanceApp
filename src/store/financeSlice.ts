@@ -4,7 +4,16 @@ type FinanceState={
 
   boolAuth:boolean,
   logOrSign:boolean,
-  backArrow:boolean
+  backArrow:boolean,
+  boolUpdateProfile:boolean,
+  boolAddExpense:boolean,
+  boolPass:boolean,
+  boolDelete:boolean,
+  boolLogOut:boolean,
+
+
+  logOutButt:boolean,
+  deleteAccountButt:boolean,
   
 }
 
@@ -14,7 +23,19 @@ const initialState: FinanceState = {
   boolAuth:false,
   logOrSign:false,
   backArrow:false,
+
+
+
+  boolUpdateProfile:false,
+  boolAddExpense:false,
+
+  boolPass:false,
+  boolDelete:false,
+  boolLogOut:false,
   
+
+  logOutButt:false,
+  deleteAccountButt:false,
 }
 
 const financeSlice = createSlice({
@@ -26,6 +47,28 @@ const financeSlice = createSlice({
     },
     setBackArrow(state,action){
       state.backArrow=action.payload
+    },
+    setUpdateProfile(state,action){
+      state.boolUpdateProfile=action.payload
+    },
+    setAddExpense(state,action){
+      state.boolAddExpense=action.payload
+    },
+    setNewPassword(state,action){
+      state.boolPass=action.payload
+    },
+    setDeleteProfile(state,action){
+      state.boolDelete=action.payload
+    },
+    setLogOut(state,action){
+      state.boolLogOut=action.payload
+    },
+
+    setDeleteProfileButt(state,action){
+      state.deleteAccountButt=action.payload
+    },
+    setLogOutButt(state,action){
+      state.logOutButt=action.payload
     }
 
   },
@@ -33,6 +76,6 @@ const financeSlice = createSlice({
 });
 
 /* export const {} = articleSlice.actions; */
-export const {setLogOrSign,setBackArrow} = financeSlice.actions;
+export const {setNewPassword,setLogOrSign,setBackArrow,setAddExpense,setUpdateProfile,setDeleteProfile,setLogOut,setDeleteProfileButt,setLogOutButt} = financeSlice.actions;
 export default financeSlice.reducer;
 

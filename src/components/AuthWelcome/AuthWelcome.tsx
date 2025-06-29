@@ -55,6 +55,8 @@ export default function AuthWelcome() {
             
                 if(boolname && boolpass){
                     localStorage.setItem('user',name)
+                    
+                   
                     localStorage.setItem('auth','true')
                     window.location.reload()
                 }

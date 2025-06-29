@@ -2,7 +2,7 @@
     background-color: #F1FFF3;
     border-top-right-radius: 35px;
     border-top-left-radius: 35px;
-    height:100%;
+    min-height: 800px;
 }
 .analyzis-calendar__main-container{
     padding: 35px;

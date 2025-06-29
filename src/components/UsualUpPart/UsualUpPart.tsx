@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import notif from '../../assets/icons/notif.svg'
 import expense from '../../assets/icons/Expense.svg'
 import income from '../../assets/icons/Income.svg'
 import './UsualUpPart.css'
 import back from '../../assets/icons/back.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../../hook'
 import { setBackArrow } from '../../store/financeSlice'
+import db from '../../../db.json'
 interface MyComponentProps {
     customMoney:boolean,
     arrow:boolean,
@@ -14,7 +15,41 @@ interface MyComponentProps {
   }
 const UsualUpPart: React.FC<MyComponentProps> = ({ customMoney,arrow,text }) =>  {
     const dis=useAppDispatch()
+    const navigate=useNavigate()
+    const [userName,setUserName]=useState('')
+    useEffect(() => {
+        const user = localStorage.getItem('user');
+        if (!user) {
+          navigate('/login');
+          return;
+        }
+        setUserName(user);
+      }, [navigate]);
+    
+      // Получение операций текущего пользователя
+      const userOperations = useMemo(() => {
+        if (!userName) return [];
+        const user = db.users.find(user => user.name === userName);
+        return user ? [...user.operations].reverse() : [];
+      }, [userName]);
+    
 
+    const totalBalance = useMemo(() => {
+        return userOperations.reduce((sum, op) => sum + op.money, 0).toFixed(2);
+      }, [userOperations]);
+    
+      // Расчет доходов и расходов
+      const [incomes, expenses] = useMemo(() => {
+        let inc = 0;
+        let exp = 0;
+        
+        userOperations.forEach(op => {
+          if (op.money > 0) inc += op.money;
+          else exp += Math.abs(op.money);
+        });
+    
+        return [inc.toFixed(2), exp.toFixed(2)];
+      }, [userOperations]);
   return (
     <>
         <div className="home__up">
@@ -39,7 +74,7 @@ const UsualUpPart: React.FC<MyComponentProps> = ({ customMoney,arrow,text }) => 
                                         <img src={income} alt="" />
                                         <p>Total Balance</p>
                                     </div>
-                                    <p className='home__total-money home__total-money--white'>$7,783.00</p>
+                                    <p className='home__total-money home__total-money--white'>{totalBalance}$</p>
                                 </div>
                                 
                             </div>
@@ -49,7 +84,7 @@ const UsualUpPart: React.FC<MyComponentProps> = ({ customMoney,arrow,text }) => 
                                         <img src={expense} alt="" />
                                         <p>Total Expense</p>
                                     </div>
-                                    <p className='home__total-money home__total-money--blue'>-$1.187.40</p>
+                                    <p className='home__total-money home__total-money--blue'>{expenses}$</p>
                                 </div>
                                 
                             </div>

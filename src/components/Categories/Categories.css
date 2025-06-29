@@ -2,9 +2,11 @@
     background-color: #F1FFF3;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
+    min-height: 600px;
 }
 .categories__main-container{
     padding: 30px;
+    padding-bottom: 150px;
     
     
 
@@ -21,6 +23,18 @@
     align-items: center;
 }
 .categories__main-item-img{
-    width: 105px;
-    height: 98px;
+    width: 95px;
+    height: 88px;
+}
+@media(width<395px){
+
+    .categories__main-types{
+        
+        gap: 15px;
+        row-gap: 30px;
+    }
+    .categories__main-item-img{
+        width: 89px;
+        height: 78px;
+    }
 }

@@ -13,6 +13,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+body{
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
 
 
 
