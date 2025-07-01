@@ -5,15 +5,21 @@ import income from '../../assets/icons/Income.svg'
 import './UsualUpPart.css'
 import back from '../../assets/icons/back.svg'
 import { Link, useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '../../hook'
-import { setBackArrow } from '../../store/financeSlice'
+import { useAppDispatch, useAppSelector } from '../../hook'
+import { setBackArrow,setterBackHref } from '../../store/financeSlice'
 import db from '../../../db.json'
 interface MyComponentProps {
+    
     customMoney:boolean,
     arrow:boolean,
     text:string 
   }
 const UsualUpPart: React.FC<MyComponentProps> = ({ customMoney,arrow,text }) =>  {
+
+
+  const hreff=useAppSelector(state=>state.finance.backHref)
+
+  console.log(hreff)
     const dis=useAppDispatch()
     const navigate=useNavigate()
     const [userName,setUserName]=useState('')
@@ -50,20 +56,42 @@ const UsualUpPart: React.FC<MyComponentProps> = ({ customMoney,arrow,text }) => 
     
         return [inc.toFixed(2), exp.toFixed(2)];
       }, [userOperations]);
+
+     
+
+      function setterHref(){
+        if(text=='Profile'){
+         dis(setterBackHref('/profile'))
+        }
+        if(text=='Transactions'){
+          dis(setterBackHref('/transactions'))
+        }
+        if(text=='Home'){
+          dis(setterBackHref('/'))
+        }
+        if(text=='Analyzis'){
+          dis(setterBackHref('/analyzis'))
+        }
+        if(text=='Categories'){
+          dis(setterBackHref('/category'))
+        }
+      }
   return (
     <>
         <div className="home__up">
                     <div className="home__up-container">
                     <div className={`home__intro ${arrow==true?'home-intro--grid3':""}`}>
                         <div className={`${arrow==true?'back back-flex':'back back-none'}`}>
-                            <Link to='/'><img onClick={()=>{dis(setBackArrow(true))}} className='back-img' src={back} alt="" /></Link>
+                            <Link to={hreff}><img onClick={()=>{dis(setBackArrow(true));dis(setterBackHref('/'))}} className='back-img' src={back} alt="" /></Link>
                         </div>
                         <div className="home__intro-text">
                             <h2 className="home__intro-text-title">{text}</h2>
                             <p>{arrow==true?"":'Good morning'}</p>
                         </div>
                         <div className="home__notifications">
-                            <img className='home__notifications-image' src={notif} alt="" />
+                          <Link to='/notification'>
+                            <img onClick={setterHref} className='home__notifications-image' src={notif} alt="" />
+                            </Link>
                         </div>
                     </div>
                     {customMoney==true?'':<div className="home__total">

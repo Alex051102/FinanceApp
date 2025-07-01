@@ -17,7 +17,7 @@ import arrow from '../../assets/icons/calendarArrow.svg'
 import downArr from '../../assets/icons/downArrow.svg'
 import Button from '../Button/Button';
 import { useAppDispatch } from '../../hook';
-import { setUpdateProfile,setAddExpense } from '../../store/financeSlice';
+import { setUpdateProfile,setAddExpense ,setterBackHref} from '../../store/financeSlice';
 interface MyComponentProps {
   setterContent: (content: boolean) => void;
   type:string[]
@@ -160,6 +160,22 @@ const newOperation = {
 };
 
 
+const newNotif ={
+ 
+    time: currentDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }),
+    day: `${currentDate.getDate()}`,
+    month: currentDate.toLocaleString('en-US', { month: 'long' }),
+    title: "Transactions",
+    body: "A new transaction has been registered",
+    dop:[
+      category,
+      name,
+      category=='salary'?`${Number(amount)} $`:`${-(Number(amount))} $`    
+    ]
+  
+}
+
+
 
     async function saveOperations() {
 
@@ -171,6 +187,7 @@ const newOperation = {
       
           
           user.operations.push(newOperation);
+          user.notifiactions.push(newNotif)
       
           
           await fetch(`http://localhost:3000/users/${localStorage.getItem('userId')}`, {
@@ -210,6 +227,8 @@ const newOperation = {
 
     const [errorName,setErrorName]=useState('')
     const [errorAmount,setErrorAmount]=useState('')
+
+    
  
   return (
     <>
@@ -219,7 +238,7 @@ const newOperation = {
                     <div className="analyzis-search__up-nav">
                         <div onClick={()=>{setterContent(false)}} className="analyzis-search__up-back"><img src={back} alt="" /></div>
                         <div className="analyzis-search__up-text-outer"><h2 className='analyzis-search__up-text'>{type[1]}</h2></div>
-                        <div className="analyzis-search__up-notifications"><img src={notif} alt="" /></div>
+                        <Link to='/notification'><div onClick={()=>dis(setterBackHref('/transactions'))} className="analyzis-search__up-notifications"><img src={notif} alt="" /></div></Link>
                     </div>
                     
                     
@@ -277,7 +296,7 @@ const newOperation = {
                     <div className="analyzis-search__up-nav">
                         <div onClick={()=>{setAdd(false)}} className="analyzis-search__up-back"><img src={back} alt="" /></div>
                         <div className="analyzis-search__up-text-outer"><h2 className='analyzis-search__up-text'>Add Expense</h2></div>
-                        <div className="analyzis-search__up-notifications"><img src={notif} alt="" /></div>
+                        <Link to='/notification'><div onClick={()=>dis(setterBackHref('/transactions'))} className="analyzis-search__up-notifications"><img src={notif} alt="" /></div></Link>
                     </div>
                     
                     

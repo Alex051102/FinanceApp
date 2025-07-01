@@ -14,6 +14,8 @@ import groceries from '../../assets/icons/Groceries.svg'
 import gift from '../../assets/icons/Gift.svg'
 import more from '../../assets/icons/More.svg'
 import HalfDonutChart from '../HalfDonutChart/HalfDonutChart';
+import { useAppDispatch } from '../../hook';
+import { setterBackHref } from '../../store/financeSlice';
 
 export default function AnalyzisCalendar() {
     const monthes2025: string[][] = [
@@ -304,6 +306,8 @@ export default function AnalyzisCalendar() {
             setMonthNum(11)
         }
     },[month])
+
+    const dis=useAppDispatch()
   return (
     <>
         <div className="analyzis-calendar">
@@ -314,7 +318,7 @@ export default function AnalyzisCalendar() {
                             
                             <Link to='/analyzis'><div className="analyzis-search__up-back"><img src={back} alt="" /></div></Link>
                             <div className="analyzis-search__up-text-outer"><h2 className='analyzis-search__up-text'>Calendar</h2></div>
-                            <div className="analyzis-search__up-notifications"><img src={notif} alt="" /></div>
+                            <Link to='/notification'><div onClick={()=>dis(setterBackHref('/analyzis-calendar'))} className="analyzis-search__up-notifications"><img src={notif} alt="" /></div></Link>
                         </div>
                         
                         

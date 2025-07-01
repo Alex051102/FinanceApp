@@ -16,6 +16,7 @@ import ShortPopUp from "../ShortPopUp/ShortPopUp";
 import BigPopUp from "../BigPopUp/BigPopUp";
 import db from '../../../db.json'
 import { useEffect } from "react";
+import Notification from "../Notification/Notification";
 interface MainProps {
   onLogout: () => void;
 }
@@ -52,9 +53,10 @@ export default function Main({ onLogout }: MainProps) {
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/notification" element={<Notification />} />
         </Routes>
         </div>
-        {update==true ?<ShortPopUp text="Success profile updation!"></ShortPopUp>:""}
+        {update==true ?<ShortPopUp text="Profile was updated!"></ShortPopUp>:""}
         {add==true ?<ShortPopUp text="Operation was added!"></ShortPopUp>:""}
         {newPass==true ?<ShortPopUp text="Password was updated!"></ShortPopUp>:""}
 

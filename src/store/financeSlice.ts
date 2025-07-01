@@ -14,6 +14,8 @@ type FinanceState={
 
   logOutButt:boolean,
   deleteAccountButt:boolean,
+
+  backHref:string
   
 }
 
@@ -36,6 +38,8 @@ const initialState: FinanceState = {
 
   logOutButt:false,
   deleteAccountButt:false,
+
+  backHref:'/'
 }
 
 const financeSlice = createSlice({
@@ -69,6 +73,9 @@ const financeSlice = createSlice({
     },
     setLogOutButt(state,action){
       state.logOutButt=action.payload
+    },
+    setterBackHref(state,action){
+      state.backHref=action.payload
     }
 
   },
@@ -76,6 +83,6 @@ const financeSlice = createSlice({
 });
 
 /* export const {} = articleSlice.actions; */
-export const {setNewPassword,setLogOrSign,setBackArrow,setAddExpense,setUpdateProfile,setDeleteProfile,setLogOut,setDeleteProfileButt,setLogOutButt} = financeSlice.actions;
+export const {setterBackHref,setNewPassword,setLogOrSign,setBackArrow,setAddExpense,setUpdateProfile,setDeleteProfile,setLogOut,setDeleteProfileButt,setLogOutButt} = financeSlice.actions;
 export default financeSlice.reducer;
 

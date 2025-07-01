@@ -13,6 +13,8 @@ import entertaiment from '../../assets/icons/Entertainment.svg'
 import groceries from '../../assets/icons/Groceries.svg'
 import gift from '../../assets/icons/Gift.svg'
 import { Link } from 'react-router-dom'
+import { useAppDispatch } from '../../hook'
+import { setterBackHref } from '../../store/financeSlice'
 export default function AnalyzisSearch() {
 
     const days = Array.from({ length: 31 }, (_, i) => i + 1);
@@ -152,6 +154,7 @@ export default function AnalyzisSearch() {
     const [search,setSearch]=useState('')
 
     const [rendering, setRendering] = useState(<></>);
+    const dis=useAppDispatch()
 
 function renderFiltered() {
   // Собираем все подходящие карточки в массив
@@ -198,7 +201,7 @@ function renderFiltered() {
                     <div className="analyzis-search__up-nav">
                         <Link to='/analyzis'><div className="analyzis-search__up-back"><img src={back} alt="" /></div></Link>
                         <div className="analyzis-search__up-text-outer"><h2 className='analyzis-search__up-text'>Search</h2></div>
-                        <div className="analyzis-search__up-notifications"><img src={notif} alt="" /></div>
+                        <Link to='/notification'><div onClick={()=>dis(setterBackHref('/analyzis-search'))} className="analyzis-search__up-notifications"><img src={notif} alt="" /></div></Link>
                     </div>
                     <input onChange={(e)=>setSearch(e.target.value)} placeholder='Search...' className='analyzis-search__up-input' type="text" name="" id="" />
                     
