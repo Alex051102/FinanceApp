@@ -8,6 +8,16 @@ import { useAppSelector } from './hook';
 
 function App() {
   
+  useEffect(() => {
+    const tg = window.Telegram?.WebApp;
+
+    if (tg) {
+      tg.expand();  // Развернуть приложение на весь экран
+      tg.enableClosingConfirmation(); // Запросить подтверждение при закрытии
+      tg.MainButton.text = "Submit";  // Показать кнопку внизу
+      tg.MainButton.show();
+    }
+  }, []);
   const [isAuth, setIsAuth] = useState(localStorage.getItem('auth') === 'true');
   const deleter=useAppSelector(state=>state.finance.deleteAccountButt)
   const logout=useAppSelector(state=>state.finance.logOutButt)
@@ -35,6 +45,7 @@ function App() {
       <div className="app__container">
         {isAuth==true?<Main onLogout={handleLogout}></Main>:<Auth></Auth>}
       </div>
+      <p>hhhhh</p>
           
     </div>
         

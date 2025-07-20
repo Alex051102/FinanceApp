@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import UsualUpPart from '../UsualUpPart/UsualUpPart'
+import { useState } from 'react'
+
 import back from '../../assets/icons/back.svg'
 import notif from '../../assets/icons/notif.svg'
 import { Link } from 'react-router-dom'

@@ -16,7 +16,7 @@ export default function Categories() {
     const [type,setType]=useState(['',''])
 
 
-    function setterContent(b:boolean){
+    function setterContent(){
         setContent(false)
     }
     

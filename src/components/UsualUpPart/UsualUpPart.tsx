@@ -45,7 +45,7 @@ const UsualUpPart: React.FC<MyComponentProps> = ({ customMoney,arrow,text }) => 
       }, [userOperations]);
     
       // Расчет доходов и расходов
-      const [incomes, expenses] = useMemo(() => {
+      const [/* incomes,  */expenses] = useMemo(() => {
         let inc = 0;
         let exp = 0;
         

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import UsualUpPart from '../UsualUpPart/UsualUpPart'
 import db from '../../../db.json'
 import notifUsual from '../../assets/icons/notifUsual.svg'

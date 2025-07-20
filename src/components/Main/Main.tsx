@@ -11,7 +11,7 @@ import Profile from "../Profile/Profile";
 import EditProfile from "../EditProfile/EditProfile";
 import Setting from "../Setting/Setting";
 import Help from "../Help/Help";
-import { useAppDispatch, useAppSelector } from "../../hook";
+import {  useAppSelector } from "../../hook";
 import ShortPopUp from "../ShortPopUp/ShortPopUp";
 import BigPopUp from "../BigPopUp/BigPopUp";
 import db from '../../../db.json'
@@ -31,7 +31,7 @@ export default function Main({ onLogout }: MainProps) {
       }
     })
   },[])
-  const dis=useAppDispatch();
+ 
   const update=useAppSelector(state=>state.finance.boolUpdateProfile)
   const add=useAppSelector(state=>state.finance.boolAddExpense)
   const newPass=useAppSelector(state=>state.finance.boolPass)

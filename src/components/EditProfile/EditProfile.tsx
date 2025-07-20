@@ -9,6 +9,8 @@ import notif from '../../assets/icons/notif.svg';
 import profile from '../../assets/icons/prof.svg';
 import cam from '../../assets/icons/Cam.svg';
 
+import { initializeApp } from 'firebase/app';
+
 interface User {
   id: string;
   name: string;

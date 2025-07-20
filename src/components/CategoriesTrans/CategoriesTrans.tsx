@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import UsualUpPart from '../UsualUpPart/UsualUpPart';
+
 import './CategoriesTrans.css';
 import db from '../../../db.json';
 import salary from '../../assets/icons/Salary.svg';
@@ -13,11 +13,11 @@ import groceries from '../../assets/icons/Groceries.svg';
 import gift from '../../assets/icons/Gift.svg';
 import back from '../../assets/icons/back.svg'
 import notif from '../../assets/icons/notif.svg'
-import arrow from '../../assets/icons/calendarArrow.svg'
+
 import downArr from '../../assets/icons/downArrow.svg'
 import Button from '../Button/Button';
 import { useAppDispatch } from '../../hook';
-import { setUpdateProfile,setAddExpense ,setterBackHref} from '../../store/financeSlice';
+import {setAddExpense ,setterBackHref} from '../../store/financeSlice';
 interface MyComponentProps {
   setterContent: (content: boolean) => void;
   type:string[]
@@ -26,7 +26,7 @@ const CategoriesTrans: React.FC<MyComponentProps> = ({setterContent, type }) => 
  
   const dis=useAppDispatch()
   const navigate = useNavigate();
-  const [current, setCurrent] = useState(false);
+ /*  const [current, setCurrent] = useState(false); */
   const [months, setMonths] = useState<string[]>([]);
   const [userName, setUserName] = useState('');
   const now = useMemo(() => new Date(), []);
@@ -68,7 +68,7 @@ const CategoriesTrans: React.FC<MyComponentProps> = ({setterContent, type }) => 
     }
 
     setMonths(Array.from(matchedMonths));
-  }, [current, userOperations, now]);
+  }, [ userOperations, now]);
 
   // Фильтрация операций для отображения
   const filteredOperations = useMemo(() => {
@@ -76,7 +76,7 @@ const CategoriesTrans: React.FC<MyComponentProps> = ({setterContent, type }) => 
       (operation.type==type[0]) &&
       months.includes(operation.month)
     );
-  }, [current, userOperations, months]);
+  }, [userOperations, months]);
 
   // Функция для получения иконки по типу операции
   const imageSetter = (type: string) => {

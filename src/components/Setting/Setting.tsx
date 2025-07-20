@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import back from '../../assets/icons/back.svg'
 import notif from '../../assets/icons/notif.svg'
-import profile from '../../assets/icons/prof.svg'
+
 import passs from '../../assets/icons/passwordSett.svg'
 import account from '../../assets/icons/accounSett.svg'
 import arrow from '../../assets/icons/arrowSett.svg'
@@ -10,7 +10,7 @@ import './Setting.css'
 import Button from '../Button/Button'
 import db from '../../../db.json'
 import { useAppDispatch } from '../../hook'
-import { setDeleteProfile,setLogOut,setNewPassword } from '../../store/financeSlice'
+import { setDeleteProfile,setNewPassword } from '../../store/financeSlice'
 export default function Setting() {
     let pass:string= "" ;
     let id:string=' ';

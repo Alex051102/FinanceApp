@@ -1,15 +1,15 @@
-import React from 'react'
+
 import UsualUpPart from '../UsualUpPart/UsualUpPart'
 import './Profile.css'
 import profile from '../../assets/icons/Profile22.svg'
 import setting from '../../assets/icons/Setting.svg'
 import help from '../../assets/icons/Help.svg'
 import logout from '../../assets/icons/Logout.svg'
-import prof from '../../assets/icons/prof.svg'
+
 import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../../hook'
 import db from '../../../db.json'
-import { setDeleteProfile,setLogOut } from '../../store/financeSlice'
+import {setLogOut } from '../../store/financeSlice'
 export default function Profile() {
     let profileLogo:string=''
     db.users.forEach(user=>{
