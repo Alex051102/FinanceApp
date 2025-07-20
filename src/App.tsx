@@ -43,7 +43,7 @@ function App() {
   return (
     <><div className="app">
       <div className="app__container">
-        {isAuth==true?<Main onLogout={handleLogout}></Main>:<Auth></Auth>}
+        {isAuth?<Main onLogout={handleLogout}></Main>:<Auth></Auth>}
       </div>
       <p>hhhhhyyy</p>
           
