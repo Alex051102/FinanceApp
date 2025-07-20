@@ -45,7 +45,7 @@ function App() {
       <div className="app__container">
         {isAuth==true?<Main onLogout={handleLogout}></Main>:<Auth></Auth>}
       </div>
-      <p>hhhhh</p>
+      <p>hhhhhyyy</p>
           
     </div>
         
